@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Sorvec | Business Consulting & Software Development</title>
+  <meta name="description" content="Sorvec is an Australian technology and business consulting company helping organisations turn complex ideas into scalable software systems." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://sorvec.com.au/" />
+
+  <meta property="og:locale" content="en_AU" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sorvec | Business Consulting & Software Development" />
+  <meta property="og:description" content="Business consulting, product strategy and custom software development for early-stage and growing organisations." />
+  <meta property="og:url" content="https://sorvec.com.au/" />
+  <meta property="og:site_name" content="Sorvec" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SORVEC PTY LTD",
+    "url": "https://sorvec.com.au/",
+    "email": "service@sorvec.com",
+    "taxID": "ABN 41 698 689 075",
+    "description": "Australian business consulting and software development company."
+  }
+  </script>
+
+  <style>
+    body {
+      background:
+        radial-gradient(circle at 15% 5%, rgba(26,125,255,.30), transparent 32%),
+        radial-gradient(circle at 85% 0%, rgba(124,92,255,.24), transparent 34%),
+        radial-gradient(circle at 50% 100%, rgba(94,231,255,.13), transparent 36%),
+        #05070D;
+    }
+
+    .glass {
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.035));
+      border: 1px solid rgba(255,255,255,.13);
+      box-shadow: 0 24px 80px rgba(0,0,0,.34);
+      backdrop-filter: blur(22px);
+    }
+
+    .soft-grid {
+      background-image:
+        linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(circle at center, black 0%, transparent 72%);
+    }
+
+    .orbit {
+      animation: float 7s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-14px); }
+    }
+
+    @keyframes glowPulse {
+      0%, 100% { opacity: .45; transform: scale(1); }
+      50% { opacity: .85; transform: scale(1.08); }
+    }
+
+    @keyframes scanLine {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(280%); }
+    }
+
+    .glow-pulse {
+      animation: glowPulse 5s ease-in-out infinite;
+    }
+
+    .scan-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .scan-card::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 90px;
+      top: 0;
+      background: linear-gradient(to bottom, transparent, rgba(94,231,255,.14), transparent);
+      animation: scanLine 4.5s linear infinite;
+      pointer-events: none;
+    }
+
+    .shine {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shine::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, transparent 25%, rgba(255,255,255,.18) 45%, transparent 60%);
+      transform: translateX(-120%);
+      transition: transform .8s cubic-bezier(.16,1,.3,1);
+    }
+
+    .shine:hover::before {
+      transform: translateX(120%);
+    }
+
+    @keyframes signalTravel {
+      0% { transform: translateX(-120%); opacity: 0; }
+      20% { opacity: .95; }
+      100% { transform: translateX(140%); opacity: 0; }
+    }
+
+    .signal-line {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .signal-line::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.92), transparent);
+      animation: signalTravel 3.2s linear infinite;
+    }
+
+    .signal-line-blue::after {
+      background: linear-gradient(90deg, transparent, rgba(26,125,255,.95), transparent);
+    }
+
+    .signal-line-cyan::after {
+      background: linear-gradient(90deg, transparent, rgba(94,231,255,.95), transparent);
+    }
+
+    .signal-line-violet::after {
+      background: linear-gradient(90deg, transparent, rgba(124,92,255,.95), transparent);
+    }
+
+    .node-ring {
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.08),
+        0 0 0 10px rgba(255,255,255,.03),
+        0 18px 40px rgba(0,0,0,.28);
+    }
+
+    .capability-graph {
+      position: relative;
+      min-height: 300px;
+    }
+
+    .graph-core {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 156px;
+      height: 156px;
+      border-radius: 9999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(circle at 35% 30%, rgba(94,231,255,.22), transparent 45%),
+        radial-gradient(circle at 70% 65%, rgba(124,92,255,.18), transparent 46%),
+        rgba(8,12,24,.82);
+      box-shadow:
+        0 20px 48px rgba(0,0,0,.30);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .graph-node {
+      position: absolute;
+      width: 104px;
+      min-height: 48px;
+      border-radius: 9999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      backdrop-filter: blur(14px);
+      padding: .7rem .85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .45rem;
+      box-shadow: 0 12px 24px rgba(0,0,0,.18);
+      transform: translate(-50%, -50%);
+    }
+
+    .graph-node::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 9999px;
+      background: currentColor;
+      opacity: .95;
+      box-shadow: 0 0 14px currentColor;
+    }
+
+    .graph-node-1 { top: calc(50% - 118px); left: 50%; color: #5EE7FF; }
+    .graph-node-2 { top: calc(50% - 66px); left: calc(50% + 150px); color: #7C5CFF; }
+    .graph-node-3 { top: calc(50% + 70px); left: calc(50% + 146px); color: #1A7DFF; }
+    .graph-node-4 { top: calc(50% + 118px); left: 50%; color: #8CF6C7; }
+    .graph-node-5 { top: calc(50% + 70px); left: calc(50% - 146px); color: #5EE7FF; }
+    .graph-node-6 { top: calc(50% - 66px); left: calc(50% - 150px); color: #7C5CFF; }
+
+    .graph-link {
+      position: absolute;
+      height: 1px;
+      transform-origin: left center;
+      background: linear-gradient(90deg, rgba(255,255,255,.16), rgba(255,255,255,.04));
+      pointer-events: none;
+    }
+
+    .graph-link::after {
+      content: "";
+      position: absolute;
+      inset: -1px 0;
+      background: inherit;
+      filter: blur(1px);
+      opacity: .9;
+    }
+
+    .graph-link-1 { left: 50%; top: calc(50% - 94px); width: 16px; transform: translateX(0) rotate(90deg); }
+    .graph-link-2 { left: calc(50% + 98px); top: calc(50% - 66px); width: 44px; transform: translateX(0) rotate(140deg); }
+    .graph-link-3 { left: calc(50% + 94px); top: calc(50% + 70px); width: 44px; transform: translateX(0) rotate(-137deg); }
+    .graph-link-4 { left: 50%; top: calc(50% + 94px); width: 16px; transform: translateX(0) rotate(-90deg); }
+    .graph-link-5 { left: calc(50% - 94px); top: calc(50% + 70px); width: 44px; transform: translateX(0) rotate(-43deg); }
+    .graph-link-6 { left: calc(50% - 98px); top: calc(50% - 66px); width: 44px; transform: translateX(0) rotate(40deg); }
+  </style>
+</head>
+
+<body class="font-sans text-white antialiased overflow-x-hidden">
+
+  <header class="fixed top-0 left-0 w-full z-50 border-b border-white/10 bg-ink/70 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <img src="Assets/Sorvec Logo Icon White.svg" alt="Sorvec" class="w-8 h-8">
+        <span class="font-black tracking-tight text-lg">SORVEC</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm text-white/55 font-medium">
+        <a href="#work" class="hover:text-white transition">What we do</a>
+        <a href="#principles" class="hover:text-white transition">Principles</a>
+        <a href="#join" class="hover:text-white transition">Why Sorvec</a>
+        <a href="#contact" class="hover:text-white transition">Contact</a>
+      </nav>
+
+      <a href="mailto:service@sorvec.com" class="hidden sm:inline-flex h-11 px-5 items-center justify-center rounded-full bg-white text-ink text-sm font-bold hover:bg-white/90 transition">
+        Start a conversation
+      </a>
+    </div>
+  </header>
+
+  <main class="relative pt-32">
+    <div class="absolute inset-0 soft-grid pointer-events-none"></div>
+
+    <section class="relative max-w-7xl mx-auto px-6 pt-20 pb-28">
+      <div class="grid lg:grid-cols-12 gap-14 items-center">
+        <div class="lg:col-span-6">
+          <h1 class="text-3xl md:text-5xl lg:text-6xl font-black tracking-[-0.07em] leading-[0.92]">
+            Smart Outcomes.<br>
+            Real Value.<br>
+            Empower Change.
+          </h1>
+
+          <p class="mt-8 max-w-2xl text-lg md:text-xl text-white/58 leading-relaxed">
+            Sorvec designs intelligent systems that combine OCR, retrieval, reasoning and workflow automation to turn complex operations into governed, scalable execution.
+          </p>
+
+          <div class="mt-10 flex flex-col sm:flex-row gap-4">
+            <a href="#contact" class="h-14 px-7 rounded-full bg-sorvec-blue text-white font-bold inline-flex items-center justify-center hover:brightness-110 transition">
+              Work with us
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="glass rounded-[2rem] p-5 sm:p-6 orbit scan-card">
+            <div class="capability-graph">
+              <div class="graph-link graph-link-1"></div>
+              <div class="graph-link graph-link-2"></div>
+              <div class="graph-link graph-link-3"></div>
+              <div class="graph-link graph-link-4"></div>
+              <div class="graph-link graph-link-5"></div>
+              <div class="graph-link graph-link-6"></div>
+
+              <div class="graph-core">
+                <div>
+                  <p class="text-[10px] uppercase tracking-[0.22em] text-white/42">Core</p>
+                  <p class="mt-2 text-xl font-black tracking-[-0.03em] text-white">Agent</p>
+                </div>
+              </div>
+
+              <div class="graph-node graph-node-1">
+                <p class="text-xs font-bold uppercase tracking-[0.18em] text-white">OCR</p>
+              </div>
+
+              <div class="graph-node graph-node-2">
+                <p class="text-xs font-bold uppercase tracking-[0.18em] text-white">RAG</p>
+              </div>
+
+              <div class="graph-node graph-node-3">
+                <p class="text-xs font-bold uppercase tracking-[0.18em] text-white">LLM</p>
+              </div>
+
+              <div class="graph-node graph-node-4">
+                <p class="text-xs font-bold uppercase tracking-[0.18em] text-white">Flow</p>
+              </div>
+
+              <div class="graph-node graph-node-5">
+                <p class="text-xs font-bold uppercase tracking-[0.18em] text-white">Search</p>
+              </div>
+
+              <div class="graph-node graph-node-6">
+                <p class="text-xs font-bold uppercase tracking-[0.18em] text-white">Rules</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="border-y border-white/10 bg-white/[.035]">
+    <div class="max-w-7xl mx-auto px-6 py-8 grid md:grid-cols-3 gap-6 text-sm text-white/55">
+      <div><span class="text-white font-bold">Document intelligence</span><br>Turn unstructured inputs into usable, structured signals.</div>
+      <div><span class="text-white font-bold">Retrieval and reasoning</span><br>Connect models to context, rules and operational knowledge.</div>
+      <div><span class="text-white font-bold">Workflow automation</span><br>Wrap intelligence into governed systems that teams can run.</div>
+    </div>
+  </section>
+
+  <section id="work" class="max-w-7xl mx-auto px-6 py-28">
+    <div class="max-w-3xl mb-14">
+      <p class="text-sorvec-cyan text-sm font-bold uppercase tracking-[0.28em] mb-4">What we do</p>
+      <h2 class="text-4xl md:text-6xl font-black tracking-[-0.05em] leading-tight">
+        We build the intelligent layer between documents, decisions and execution.
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="glass shine rounded-3xl p-8">
+        <div class="text-5xl font-black text-white/15 mb-10">A</div>
+        <h3 class="text-xl font-bold mb-3">Intelligence Design</h3>
+        <p class="text-white/52 leading-relaxed">
+          We map where information enters the workflow, what must be understood, and how intelligence should support real operating decisions.
+        </p>
+      </div>
+
+      <div class="glass shine rounded-3xl p-8">
+        <div class="text-5xl font-black text-white/15 mb-10">B</div>
+        <h3 class="text-xl font-bold mb-3">Retrieval Architecture</h3>
+        <p class="text-white/52 leading-relaxed">
+          We design the retrieval, reasoning and control layers that keep AI systems grounded, reviewable and operationally useful.
+        </p>
+      </div>
+
+      <div class="glass shine rounded-3xl p-8">
+        <div class="text-5xl font-black text-white/15 mb-10">C</div>
+        <h3 class="text-xl font-bold mb-3">Workflow Systems</h3>
+        <p class="text-white/52 leading-relaxed">
+          We build intelligent internal tools and workflow systems that connect OCR, RAG, LLMs and human review into production use.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-hidden="true" class="relative h-28 overflow-hidden">
+    <div class="absolute inset-0 transition-mist"></div>
+    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+    <div class="absolute left-[18%] top-10 h-24 w-24 rounded-full bg-sorvec-blue/10 blur-3xl"></div>
+    <div class="absolute right-[18%] top-12 h-28 w-28 rounded-full bg-sorvec-cyan/10 blur-3xl"></div>
+  </section>
+
+  <section id="principles" class="relative py-28 bg-[#F6F8FC] text-ink overflow-hidden">
+    <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/70 to-transparent"></div>
+    <div class="absolute -top-40 -right-40 w-[520px] h-[520px] rounded-full bg-blue-100 blur-3xl"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-14">
+      <div class="lg:col-span-5">
+        <p class="text-sorvec-blue text-sm font-black uppercase tracking-[0.28em] mb-4">How we work</p>
+        <h2 class="text-4xl md:text-6xl font-black tracking-[-0.05em] leading-tight">
+          Sharp thinking. Clean execution.
+        </h2>
+      </div>
+
+      <div class="lg:col-span-7 grid sm:grid-cols-2 gap-5">
+        <div class="rounded-3xl border border-black/10 p-7 bg-black/[.02]">
+          <h3 class="font-black text-xl mb-3">No theatre</h3>
+          <p class="text-black/55 leading-relaxed">We focus on useful systems, clear decisions and measurable delivery.</p>
+        </div>
+
+        <div class="rounded-3xl border border-black/10 p-7 bg-black/[.02]">
+            <h3 class="font-black text-xl mb-3">Confidential working practices</h3>
+            <p class="text-black/55 leading-relaxed">Our working practices are designed to limit unnecessary exposure of sensitive project concepts, commercial assumptions and client information.</p>
+        </div>
+
+        <div class="rounded-3xl border border-black/10 p-7 bg-black/[.02]">
+          <h3 class="font-black text-xl mb-3">Business-first engineering</h3>
+          <p class="text-black/55 leading-relaxed">Technology choices should serve the operating model, not the other way around.</p>
+        </div>
+
+        <div class="rounded-3xl border border-black/10 p-7 bg-black/[.02]">
+          <h3 class="font-black text-xl mb-3">Built to evolve</h3>
+          <p class="text-black/55 leading-relaxed">We design software foundations that can grow with the company.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="join" class="relative py-32 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/[0.04] to-transparent"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6">
+      <div class="glass rounded-[2.5rem] p-8 md:p-14">
+        <div class="max-w-3xl mx-auto text-center">
+          <p class="text-sorvec-cyan text-sm font-black uppercase tracking-[0.28em] mb-5">
+            Why Sorvec
+          </p>
+
+          <h2 class="text-4xl md:text-6xl font-black tracking-[-0.06em] leading-[0.98]">
+            Built for high-trust intelligent operations.
+          </h2>
+
+          <p class="mt-7 text-lg text-white/55 leading-relaxed">
+            Sorvec combines applied intelligence, disciplined execution and confidential delivery to build systems that can support real operational work.
+          </p>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-3 gap-5">
+          <div class="rounded-3xl bg-black/35 border border-white/10 p-7">
+            <h3 class="font-bold text-xl">Clear thinking</h3>
+            <p class="text-sm text-white/45 mt-3 leading-relaxed">We design systems that stay understandable, usable and operationally grounded.</p>
+          </div>
+
+          <div class="rounded-3xl bg-black/35 border border-white/10 p-7">
+            <h3 class="font-bold text-xl">Applied intelligence</h3>
+            <p class="text-sm text-white/45 mt-3 leading-relaxed">Our work connects OCR, retrieval, reasoning and workflow design into practical systems.</p>
+          </div>
+
+          <div class="rounded-3xl bg-black/35 border border-white/10 p-7">
+            <h3 class="font-bold text-xl">Confidential working practices</h3>
+            <p class="text-sm text-white/45 mt-3 leading-relaxed">We operate with discretion on work that requires trust, control and careful execution.</p>
+          </div>
+        </div>
+
+        <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+          <a href="#contact"
+             class="h-14 px-8 rounded-full bg-white text-ink font-black inline-flex items-center justify-center hover:bg-white/90 transition">
+            Start a conversation
+          </a>
+          <a href="mailto:careers@sorvec.com?subject=Join%20Sorvec"
+             class="h-14 px-8 rounded-full border border-white/14 bg-white/5 text-white font-black inline-flex items-center justify-center hover:bg-white/10 transition">
+            Join us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="max-w-7xl mx-auto px-6 pb-28">
+    <div class="grid lg:grid-cols-12 gap-8">
+      <div class="lg:col-span-5">
+        <h2 class="text-4xl md:text-5xl font-black tracking-[-0.05em]">Contact</h2>
+        <p class="mt-4 text-white/50 leading-relaxed">
+          For intelligent systems, AI workflow design or recruitment enquiries, please contact us by email.
+        </p>
+      </div>
+
+      <div class="lg:col-span-5 glass rounded-3xl p-8">
+        <div class="grid gap-8 text-sm">
+          <div>
+            <p class="text-white/35 uppercase tracking-[0.25em] text-xs font-black mb-3">Company</p>
+            <p class="font-bold">SORVEC PTY LTD</p>
+            <p class="text-white/50 mt-1">ABN: 41 698 689 075</p>
+          </div>
+
+          <div>
+            <p class="text-white/35 uppercase tracking-[0.25em] text-xs font-black mb-3">Email</p>
+            <a href="mailto:service@sorvec.com" class="font-bold hover:text-sorvec-cyan transition">service@sorvec.com</a>
+          </div>
+
+          <div class="border-t border-white/10 pt-6">
+            <p class="text-white/50 leading-relaxed">
+              Please review our <a href="privacy.html" class="font-bold text-white hover:text-sorvec-cyan transition">Privacy Policy</a> and <a href="terms.html" class="font-bold text-white hover:text-sorvec-cyan transition">Terms</a> before contacting Sorvec.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 py-10">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-6 text-sm text-white/40">
+      <div>
+        <p class="font-bold text-white">SORVEC</p>
+        <p class="mt-1">Smart Outcomes. Real Value. Empower Change.</p>
+      </div>
+
+      <p>© 2026 SORVEC PTY LTD. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
