@@ -4,9 +4,10 @@ Static website for Sorvec, containerized with Docker and served by Caddy with au
 
 ## Domain
 
-Production hostname:
+Production hostnames:
 
 - `sorvec.com.au`
+- `www.sorvec.com.au`
 
 Caddy obtains and renews the HTTPS certificate automatically after DNS points to the server and ports `80` and `443` are reachable.
 
@@ -50,14 +51,12 @@ Log out and back in after adding your user to the `docker` group.
 
 In Route 53, create or update the hosted zone for `sorvec.com.au`.
 
-Create an `A` record:
+Create `A` records:
 
-- Name: `sorvec.com.au`
-- Type: `A`
-- Value: your EC2 Elastic IP
-- TTL: `300`
+- Name: `sorvec.com.au`, Type: `A`, Value: your EC2 Elastic IP, TTL: `300`
+- Name: `www.sorvec.com.au`, Type: `A`, Value: your EC2 Elastic IP, TTL: `300`
 
-If your DNS is hosted outside Route 53, create the same `A` record with that DNS provider.
+If your DNS is hosted outside Route 53, create the same `A` records with that DNS provider.
 
 ## Deploy On EC2
 

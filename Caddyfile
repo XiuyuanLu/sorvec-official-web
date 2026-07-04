@@ -1,4 +1,4 @@
-sorvec.com.au {
+sorvec.com.au, www.sorvec.com.au {
 	root * /srv
 	encode zstd gzip
 	file_server
